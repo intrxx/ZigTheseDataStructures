@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ZLSSettings">
-    <option name="buildOnSaveStep" value="" />
-    <option name="inlayHints" value="false" />
-    <option name="inlayHintsCompact" value="false" />
+    <option name="zlsPath" value="X:\Zig\zls\zig-out\bin\zls.exe" />
   </component>
   <component name="ZigProjectSettings">
-    <option name="explicitPathToStd" value="C:\Users\iwni\AppData\Local\Microsoft\WinGet\Packages\zig.zig_Microsoft.Winget.Source_8wekyb3d8bbwe\zig-windows-x86_64-0.13.0\lib\std" />
-    <option name="toolchainPath" value="C:\Users\iwni\AppData\Local\Microsoft\WinGet\Packages\zig.zig_Microsoft.Winget.Source_8wekyb3d8bbwe\zig-windows-x86_64-0.13.0" />
+    <option name="toolchainPath" value="X:\Zig\zig-windows-x86_64-0.14.0-dev.2265+8a00bd4ce" />
   </component>
 </project>
