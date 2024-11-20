@@ -15,6 +15,18 @@ pub fn main() !void {
     try stdout.print("Run `zig build test` to run the tests.\n", .{});
 
     try bw.flush(); // don't forget to flush!
+
+    const myVec1: vec.vector3 = vec.vector3{.x = 1.0, .y = 2.0, .z = 3.0};
+    const myVec2: vec.vector3 = vec.vector3{.x = 3.0, .y = 4.0, .z = 2.0};
+
+    const myVec3: vec.vector3 = vec.vector3.add(myVec1, myVec2);
+    myVec3.print();
+
+    const myVec4: vec.vector2 = vec.vector2{.x = 123.3, .y = 123.5};
+    const myVec5: vec.vector2 = vec.vector2{.x = 52.3, .y = 423.5};
+
+    const myVec6: vec.vector2 = vec.vector2.add(myVec4, myVec5);
+    myVec6.print();
 }
 
 test "simple test" {
