@@ -32,9 +32,12 @@ pub fn main() !void {
     //const myVec6: vec.vector2 = vec.vector2.add(myVec4, myVec5);
     //myVec6.print();
 
-    var arr = [5]i32{0, 5, 1, 2, 7};
-    algo.bubbleSort(i32, &arr, 5);
-    printArr(i32, &arr);
+    var arr = [_]i32{0, 5, 1, 2, 7, 5, 221, 2, 3, 4, 1, 2, 4};
+    //algo.bubbleSort(i32, &arr, 5);
+    //printArr(i32, &arr);
+
+    const index: u64 = algo.binarySearch(i32, &arr, 5, true);
+    std.debug.print("Index of elem: {}", .{index});
 }
 
 test "simple test" {
@@ -42,12 +45,4 @@ test "simple test" {
     defer list.deinit(); // try commenting this out and see if zig detects the memory leak!
     try list.append(42);
     try std.testing.expectEqual(@as(i32, 42), list.pop());
-}
-
-pub fn printArr(comptime T: type, arr: []T) void {
-    std.debug.print("Array: ", .{});
-    for (arr) |value| {
-        std.debug.print("{}, ", .{value});
-    }
-    std.debug.print("\n", .{});
 }
