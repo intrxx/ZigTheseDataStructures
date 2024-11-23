@@ -1,6 +1,7 @@
 const std = @import("std");
 const vec = @import("vectors.zig");
 const algo = @import("algo.zig");
+const fun = @import("fun.zig");
 
 pub fn main() !void {
     // Prints to stderr (it's a shortcut based on `std.io.getStdErr()`)
@@ -36,8 +37,9 @@ pub fn main() !void {
     //algo.bubbleSort(i32, &arr, 5);
     //printArr(i32, &arr);
 
-    const index: u64 = algo.binarySearch(i32, &arr, 5, true);
-    std.debug.print("Index of elem: {}", .{index});
+    _ = algo.binarySearch(i32, &arr, 5, true);
+
+    fun.printTree(50);
 }
 
 test "simple test" {

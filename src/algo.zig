@@ -24,6 +24,7 @@ pub fn binarySearch(comptime T: type, arr: []T, elemToFind: T, bLog: bool) u64 {
     while(low <= high){
         const mid = @divTrunc((high - low), 2) + low;
         if(arr[mid] == elemToFind){
+            std.debug.print("Index of {}: {}", .{elemToFind, mid});
             return mid;
         }
         if(elemToFind > arr[mid]){
