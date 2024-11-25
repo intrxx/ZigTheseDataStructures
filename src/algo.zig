@@ -13,18 +13,37 @@ pub fn bubbleSort(comptime T: type, arr: [*]T, len: usize) void {
     }
 }
 
+pub fn linearSearch(comptime T: type, arr: []T, elemToFind: T, bLog: bool) u64 {
+    if(bLog){
+        log.printArr(T, arr);
+    }
+
+    for(0.., arr) |i, elem| {
+        if(elem == elemToFind){
+            if(bLog){
+                std.debug.print("Index of {}: {}", .{elemToFind, i});
+            }
+            return @as(u64, i);
+        }
+    }
+    return 0;
+}
+
 pub fn binarySearch(comptime T: type, arr: []T, elemToFind: T, bLog: bool) u64 {
     std.mem.sort(T, arr, {}, comptime std.sort.asc(T));
     if(bLog){
         log.printArr(T, arr);
     }
+
     var low: u64 = 0;
     var high: u64 = @as(u64, arr.len - 1);
 
     while(low <= high){
         const mid = @divTrunc((high - low), 2) + low;
         if(arr[mid] == elemToFind){
-            std.debug.print("Index of {}: {}", .{elemToFind, mid});
+            if(bLog){
+                std.debug.print("Index of {}: {}", .{elemToFind, mid});
+            }
             return mid;
         }
         if(elemToFind > arr[mid]){

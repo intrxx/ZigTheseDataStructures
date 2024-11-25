@@ -33,11 +33,11 @@ pub fn main() !void {
     //const myVec6: vec.vector2 = vec.vector2.add(myVec4, myVec5);
     //myVec6.print();
 
-    var arr = [_]i32{0, 5, 1, 2, 7, 5, 221, 2, 3, 4, 1, 2, 4};
+    var arr = [_]i32{0, 5, 1, 2, 7, 221, 2, 3, 4, 1, 2, 4};
     //algo.bubbleSort(i32, &arr, 5);
     //printArr(i32, &arr);
 
-    _ = algo.binarySearch(i32, &arr, 5, true);
+    _ = algo.linearSearch(i32, &arr, 4, true);
 
     fun.printTree(50);
 }
